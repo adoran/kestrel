@@ -3,7 +3,7 @@ import Keys._
 import com.twitter.sbt._
 
 object Kestrel extends Build {
-  val finagleVersion = "1.11.1"
+  val finagleVersion = "5.3.0"
 
   lazy val root = Project(
     id = "kestrel",
@@ -25,9 +25,9 @@ object Kestrel extends Build {
     libraryDependencies ++= Seq(
       "com.twitter" %% "ostrich" % "4.10.6",
       "com.twitter" %% "naggati" % "2.2.3" intransitive(), // allow custom netty
-      "com.twitter" %% "finagle-core" % finagleVersion,
-      "com.twitter" %% "finagle-ostrich4" % finagleVersion,
-      "com.twitter" %% "finagle-thrift" % finagleVersion, // override scrooge's version
+      "com.twitter" % "finagle-core" % finagleVersion,
+      "com.twitter" % "finagle-ostrich4" % finagleVersion,
+      "com.twitter" % "finagle-thrift" % finagleVersion, // override scrooge's version
       "org.jboss.netty" % "netty" % "3.2.6.Final",
       "com.twitter" %% "scrooge-runtime" % "1.1.3",
 
